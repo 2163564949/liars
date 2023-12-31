@@ -1,0 +1,7 @@
+/*背景图*/
+body{
+    background-image: url(beijing.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}

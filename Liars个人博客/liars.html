@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liars</title>
+    <link rel="icon" type="image/jpg" href="ku/logo.jpg">
+    <link href="CSS/shubiao.css" type="text/css" rel="stylesheet">
+    <link href="CSS\beijing.css" type="text/css" rel="stylesheet">
+    <link href="CSS\denglong.css" type="text/css" rel="stylesheet">
+    <link href="CSS\cebianlan.css" type="text/css" rel="stylesheet">
+    <link href="CSS/shubiao.css" type="text/css" rel="stylesheet">
+    <script src='JS\cebianlan.js' type='text/javascript'></script>
+    <script src='JS\yinghua.js' type='text/javascript'></script>
+    <script src='JS\fangdao.js' type='text/javascript'></script>
+    <script src="JS/dainji1.js" type="text/javascript"></script>
+</head>
+<body>
+    <audio 
+    autoplay="autoplay" 
+    loop="loop" 
+    preload="auto"
+    src="ku/ptcss.mp3">
+    </audio>
+    <style>
+        #nr{font-size:20px; margin: 0; background: -webkit-linear-gradient(left, #ffffff, #ff0000 6.25%, #ff7d00 12.5%, #ffff00 18.75%, #00ff00 25%, #00ffff 31.25%, #0000ff 37.5%, #ff00ff 43.75%, #ffff00 50%, #ff0000 56.25%, #ff7d00 62.5%, #ffff00 68.75%, #00ff00 75%, #00ffff 81.25%, #0000ff 87.5%, #ff00ff 93.75%, #ffff00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% 100%; animation: masked-animation 2s infinite linear;} @keyframes masked-animation{0%{background-position: 0 0;} 100%{background-position: -100%, 0;} }
+    </style>
+    <div style="background-color:#333;border-radius:25px;box-shadow:0px 0px 5px #f200ff;padding:5px;margin-bottom:0px;">
+        <marquee>
+        <b id="nr">欢迎来到Liars博客 - 网络IT科技魅力博客。</b> </marquee>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Personal_homepage.html">个人主页</a>
+        <a href="404.html">站长博客</a>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=2163564949&site=qq&menu=yes" target="_blank" class="contact-help main-shadow"  style="font-weight:700;" />联系站长</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div class="deng-box2">
+    <div class="deng">
+        <div class="xian"> 
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">年</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c">
+            </div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<div class="deng-box3">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">新</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c"></div>
+            <div class="shui-b">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="deng-box1">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">乐</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c"></div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<div class="deng-box">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">快</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c">
+            </div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<script>
+    function clickEffect() {
+    let balls = [];
+    let longPressed = false;
+    let longPress;
+    let multiplier = 0;
+    let width, height;
+    let origin;
+    let normal;
+    let ctx;
+    const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+    const canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+    canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+    const pointer = document.createElement("span");
+    pointer.classList.add("pointer");
+    document.body.appendChild(pointer);
+   
+    if (canvas.getContext && window.addEventListener) {
+      ctx = canvas.getContext("2d");
+      updateSize();
+      window.addEventListener('resize', updateSize, false);
+      loop();
+      window.addEventListener("mousedown", function(e) {
+        pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+        document.body.classList.add("is-pressed");
+        longPress = setTimeout(function(){
+          document.body.classList.add("is-longpress");
+          longPressed = true;
+        }, 500);
+      }, false);
+      window.addEventListener("mouseup", function(e) {
+        clearInterval(longPress);
+        if (longPressed == true) {
+          document.body.classList.remove("is-longpress");
+          pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+          longPressed = false;
+        }
+        document.body.classList.remove("is-pressed");
+      }, false);
+      window.addEventListener("mousemove", function(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+        pointer.style.top = y + "px";
+        pointer.style.left = x + "px";
+      }, false);
+    } else {
+      console.log("canvas or addEventListener is unsupported!");
+    }
+   
+   
+    function updateSize() {
+      canvas.width = window.innerWidth * 2;
+      canvas.height = window.innerHeight * 2;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(2, 2);
+      width = (canvas.width = window.innerWidth);
+      height = (canvas.height = window.innerHeight);
+      origin = {
+        x: width / 2,
+        y: height / 2
+      };
+      normal = {
+        x: width / 2,
+        y: height / 2
+      };
+    }
+    class Ball {
+      constructor(x = origin.x, y = origin.y) {
+        this.x = x;
+        this.y = y;
+        this.angle = Math.PI * 2 * Math.random();
+        if (longPressed == true) {
+          this.multiplier = randBetween(14 + multiplier, 15 + multiplier);
+        } else {
+          this.multiplier = randBetween(6, 12);
+        }
+        this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+        this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+        this.r = randBetween(8, 12) + 3 * Math.random();
+        this.color = colours[Math.floor(Math.random() * colours.length)];
+      }
+      update() {
+        this.x += this.vx - normal.x;
+        this.y += this.vy - normal.y;
+        normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+        normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+        this.r -= 0.3;
+        this.vx *= 0.9;
+        this.vy *= 0.9;
+      }
+    }
+   
+    function pushBalls(count = 1, x = origin.x, y = origin.y) {
+      for (let i = 0; i < count; i++) {
+        balls.push(new Ball(x, y));
+      }
+    }
+   
+    function randBetween(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    }
+   
+    function loop() {
+      ctx.fillStyle = "rgba(255, 255, 255, 0)";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.r < 0) continue;
+        ctx.fillStyle = b.color;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+        ctx.fill();
+        b.update();
+      }
+      if (longPressed == true) {
+        multiplier += 0.2;
+      } else if (!longPressed && multiplier >= 0) {
+        multiplier -= 0.4;
+      }
+      removeBall();
+      requestAnimationFrame(loop);
+    }
+   
+    function removeBall() {
+      for (let i = 0; i < balls.length; i++) {
+        let b = balls[i];
+        if (b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+          balls.splice(i, 1);
+        }
+      }
+    }
+  }
+  clickEffect();//调用特效函数
+</script>
+<div>
+    <div>
+      <fieldset
+        style="
+          border: 1px dashed #008cff;
+          padding: 10px;
+          border-radius: 5px;
+          line-height: 2em;
+          color: #6d6d6d;
+        "
+      >
+        <legend
+          align="center"
+          style="
+            width: 30%;
+            text-align: center;
+            background-color: #008cff;
+            border-radius: 5px;
+           background-image: linear-gradient(to right, #FFCC99, #FF99CC); text-align:center;" 
+          "
+        >
+          文章版权声明
+        </legend>
+        1、本网站名称：<span style="color: #3333ff"
+          ><span style="color: #FF6666; font-size: 18px"
+            ><strong>Liars</strong></span
+          ></span
+        ><br />
+        2、本站永久网址：<font color="#FF6666">https://www.liars.com</font
+        ><br />
+        3、本网站的文章部分内容可能来源于网络，仅供大家学习与参考，如有侵权，请联系站长QQ2163564949进行删除处理。<br />
+      </fieldset>
+    </div>
+    <!--网站声明代码end--><br />
+  </div>
+</body>
+</html>

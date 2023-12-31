@@ -1,0 +1,3 @@
+/*鼠标指针样式*/ 
+body{cursor:url(normal1.png), default;}
+a:hover{cursor:url(link1.png), pointer;}
