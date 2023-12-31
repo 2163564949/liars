@@ -1,0 +1,79 @@
+body {
+    background-color: #151522;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+svg {
+    width: 90%;
+    height: 90%;
+    visibility: hidden;
+}
+
+.sparkle {}
+
+.font {
+  color: #ec0d0d;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  font-weight: 600;
+  font-size: 28px;
+  font-family: "黑体";
+  color: #8c888b;
+  background: -webkit-linear-gradient(45deg, #58eff6, #f17840, #eac821, #4913ea, #bed5f5);
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: ran 5s linear infinite;
+}
+
+  @keyframes ran {
+    from {
+      backgroud-position: 0 0;
+    }
+    to {
+      background-position: 2000px 0;
+    }
+  }
+  .btn {
+    position: absolute;
+    bottom: 1%;
+    right: 0px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7em;
+    background: transparent;
+    color: #F9B31C;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 11;
+  }
+  
+  .btn_left {
+    left: 0px;
+    right: unset;
+    text-decoration: none;
+  }
+  .btn_right {
+    left: unset;
+    right: 0px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #ffffff;
+    color: #2a2b2f;
+  }
