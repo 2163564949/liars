@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft YaHei", sans-serif, 'Microsoft Sans Serif', 'Microsoft JhengHei UI';
+    background-color: #555;
+}
+
+body > div:last-child {
+    display: none;
+}
+
+#main {
+    display: table;
+    width: 480px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#main canvas {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+}
+
+#main canvas.playing {
+    cursor: none;
+}
+
+#modal {
+    width: 400px;
+    height: 300px;
+    top: -300px;
+    left: 50%;
+    margin-left: -200px;
+    border: #666 solid 2px;
+    border-radius: 8px;
+    position: absolute;
+    font-size: 20px;
+    background-color: #dddddd;
+    z-index: 1002;
+}
+
+@media screen and (max-width: 480px) {
+    #main, #container {
+        width: 100%;
+    }
+
+    #modal {
+        width: 94%;
+        top: 10px;
+        left: 3%;
+        margin: 0;
+    }
+}
+
+#modal.hide {
+    display: none;
+}
+
+#modal .header {
+    height: 45px;
+    line-height: 45px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: #666 solid 2px; 
+}
+
+#modal .content {
+    height: 210px;
+    line-height: 210px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#modal .footer {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-top: #666 solid 2px; 
+}
+
+#modal .footer button {
+    width: 120px;
+    height: 30px;
+    border: #666 solid 2px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    margin-left: -60px;
+    color: #333;
+    cursor: pointer;
+}

@@ -1,0 +1,115 @@
+/* 小枫网络：www.xfwl.club */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#xf_dmy {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 1;
+}
+
+main {
+    position: absolute;
+    color: #fff;
+}
+
+section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+section img {
+    width: 50%;
+    border-radius: .8rem;
+    opacity: .7;
+}
+
+section div {
+    margin: 1.8rem auto;
+    width: 85%;
+}
+
+section div h2 {
+    font-size: 3rem;
+    color: #00ffff;
+}
+
+section div h3 {
+    font-size: 2rem;
+    color: red;
+}
+
+section div p,
+section div h3 {
+    letter-spacing: .2rem;
+    margin-top: 1.2rem;
+}
+
+section div p {
+    font-size: 1.1rem;
+}
+
+section div p a {
+    transition: color .5s;
+    color: bisque;
+}
+
+section div a:hover {
+    color: darkviolet;
+}
+
+ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, .5);
+    border: 1px solid green;
+    padding: 1rem;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+    line-height: 2.2rem;
+}
+
+ul li:first-child {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: .4rem;
+}
+
+ul li a {
+    color: #b8b8b8;
+    text-decoration: none;
+    transition: color .5s;
+}
+
+ul li a:hover {
+    color: #00ffff;
+}
+
+@media only screen and (min-width: 0)and (max-width: 500px) {
+    section div h2 {
+        font-size: 2rem;
+    }
+
+    section div h3 {
+        font-size: 1.5rem;
+    }
+
+    ul li {
+        line-height: 1.5rem;
+        font-size: .7rem;
+    }
+
+    section img {
+        width: 80%;
+        border-radius: .5rem;
+    }
+}
