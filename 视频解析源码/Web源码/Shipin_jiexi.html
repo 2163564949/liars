@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/m.css" type="text/css" rel="stylesheet">
+    <script src="js/l.js" type="text/javascript"></script>
+</head>
+
+<body><br>
+    <div class="col-md-14 column">
+        <div id="kj">
+            <iframe class="wiui01" src="load.html" style="background-color: black;" id="player" allowtransparency="true"
+                allowfullscreen="true" frameborder="0" scrolling="no" name="player"></iframe>
+        </div>
+        <script type="text/javascript">
+            if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+                document.getElementById("sdfdf").style.display = "block";
+            }
+        </script>
+    </div><br>
+    <div class="col-md-14 column">
+        <div class="input-group" style="width: 100%;">
+            <span class="input-group-addon">选择接口</span> <select class="form-control" id="jk">
+                <option value="https://api.sigujx.com/?url=" selected>
+                    1️⃣ 思古解析
+                </option>
+                <option value="https://www.8090g.cn/jiexi/?url=" selected>
+                    2️⃣ 8090解析
+                </option>
+                <option value="https://z1.m1907.cn?jx=" selected>
+                    3️⃣ 1907解析
+                </option>
+                <option value="https://www.8090g.cn/jiexi/?url=" selected>
+                    ?默认接口(若默认接口无法解析请选择其他接口播放)
+                </option>
+            </select>
+        </div><br>
+        <div class="input-group" style="width: 100%;">
+            <span class="input-group-addon">播放地址</span> <input class="form-control" type="search"
+                placeholder="电脑使用Ctrl+V粘贴网址-手机直接长按粘贴网址" id="url">
+        </div><br>
+        <div>
+            <button id="bf" type="button" class="btn btn-info btn-block" onclick="dihejk()">点击开始解析</button>
+            <button id="bf" type="button" class="btn btn-warning btn-block" onclick="dihejk2()">点击全屏播放解析</button>
+        </div>
+    </div>
+</body>
+
+</html>
