@@ -1,0 +1,37 @@
+:root {
+    font-size: 16px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  a {
+    color: red;
+  }
+  
+  canvas {
+    display: block;
+  }
+  
+  .credits {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.55rem;
+    color: var(--color-a);
+  }
+  
+  .credits > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: .5rem;
+  }
