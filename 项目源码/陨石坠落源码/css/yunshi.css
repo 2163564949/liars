@@ -1,0 +1,56 @@
+#instructions{
+    position:absolute;
+    width:100%;
+    top:50%;
+    margin: auto;
+    margin-top:100px;
+    font-family:'Open Sans', sans-serif;
+    color:#fff;
+    font-size:1.2em;
+    text-transform: uppercase;
+    text-align : center;
+  }
+  
+  #world{
+    background-color:#8cdfd4;
+  }
+  
+  body{
+    background-color:#fff;
+    overflow:hidden;
+  }
+  #credits{
+    position:absolute;
+    width:100%;
+    margin: auto;
+    bottom:0;
+    margin-bottom:20px;
+    font-family:'Open Sans', sans-serif;
+    color:#56ac9f;
+    font-size:0.7em;
+    text-transform: uppercase;
+    text-align : center;
+  }
+  #credits a {
+    color:#56ac9f;
+  }
+  .page-footer {
+    position: fixed;
+    right: 35px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: black;
+    background: rgba(255, 255, 255, 0.65);
+  }
+  
+  .page-footer a {
+    display: flex;
+    margin-left: 4px;
+  }
+  .touxiang{
+      bottom: 0px;
+      width:30px;
+      height:30px;
+  }
